@@ -1,14 +1,20 @@
-const darkMode = () => {
-  const themeToggleBtns = document.querySelectorAll('#theme-toggle');
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var darkMode = function darkMode() {
+  var themeToggleBtns = document.querySelectorAll('#theme-toggle');
 
   // State
-  const theme = localStorage.getItem('theme');
+  var theme = localStorage.getItem('theme');
 
   // On mount
   theme && document.body.classList.add(theme);
 
   // Handlers
-  const handleThemeToggle = () => {
+  var handleThemeToggle = function handleThemeToggle() {
     document.body.classList.toggle('light-mode');
     if (document.body.classList.contains('light-mode')) {
       localStorage.setItem('theme', 'light-mode');
@@ -19,9 +25,9 @@ const darkMode = () => {
   };
 
   // Events
-  themeToggleBtns.forEach(btn =>
-    btn.addEventListener('click', handleThemeToggle)
-  );
+  themeToggleBtns.forEach(function (btn) {
+    return btn.addEventListener('click', handleThemeToggle);
+  });
 };
-
-export default darkMode;
+var _default = darkMode;
+exports["default"] = _default;

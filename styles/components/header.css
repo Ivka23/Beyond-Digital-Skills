@@ -19,6 +19,23 @@
   display: block;
 }
 
+.header__logo {
+  width: 35px; 
+  height: 35px; 
+  object-fit: contain;
+}
+
+
+
+
+.header__link {
+  color: white; /* Adjust the color as needed */
+  text-decoration: none;
+}
+
+
+
+
 /* xs */
 /* @media (min-width: 475px) {} */
 

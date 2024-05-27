@@ -1,10 +1,15 @@
-const lazyLoading = () => {
-  const lazyImgs = document.querySelectorAll('.lazy');
+"use strict";
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var lazyLoading = function lazyLoading() {
+  var lazyImgs = document.querySelectorAll('.lazy');
+  var observer = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(function (entry) {
       if (entry.isIntersecting) {
-        let img = entry.target;
+        var img = entry.target;
         img.src = img.dataset.src;
         img.classList.remove('loading');
         img.classList.add('loaded');
@@ -12,10 +17,9 @@ const lazyLoading = () => {
       }
     });
   });
-
-  lazyImgs.forEach(img => {
+  lazyImgs.forEach(function (img) {
     observer.observe(img);
   });
 };
-
-export default lazyLoading;
+var _default = lazyLoading;
+exports["default"] = _default;
